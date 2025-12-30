@@ -1,0 +1,28 @@
+[project]
+name = "todo-backend"
+version = "0.1.0"
+description = "Backend for multi-user todo application"
+authors = [{name = "Developer", email = "dev@example.com"}]
+requires-python = ">=3.13"
+
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "sqlmodel>=0.14.0",
+    "pyjwt>=2.8.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-multipart>=0.0.6",
+    "python-dotenv>=1.0.0",
+    "asyncpg>=0.29.0",
+    "alembic>=1.13.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.uvicorn]
+main = "src.main:app"
+host = "0.0.0.0"
+port = 8000
+reload = true
